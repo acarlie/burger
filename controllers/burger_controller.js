@@ -5,7 +5,16 @@ const burger = require("../models/burger.js");
 
 //burger routes
 router.get("/", function(req, res) {
-    res.render("index");
+    burger.all(function(data){
+        let burgers = data.filter((x) => x.eaten === 0);
+        let eaten = data.filter((x) => x.eaten === 1);
+        var hbsObject = {
+            burgers: burgers,
+            eaten: eaten
+        };
+        res.render("index", hbsObject);
+    })
+    
 });
 
 router.get("/api/burgers", function(req, res) {
@@ -14,8 +23,8 @@ router.get("/api/burgers", function(req, res) {
     });
 });
 
-router.post("api/burgers", function(req, res){
-    burger.create(['name', 'eaten'], [req.body.name, req.body.eaten], function(result){
+router.post("/api/burgers", function(req, res){
+    burger.create(['name'], [req.body.name], function(result){
         res.json({ id: result.insertId });
     })
 })

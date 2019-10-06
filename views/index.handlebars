@@ -6,8 +6,8 @@
                 <h1 class="text-center"><span class="fas fa-hamburger"></span></h1>
                 <h1 class="text-center">Make a Burger</h1>
                 <form id="burger">
-                    <textarea name="" id="burger" cols="30" rows="5"></textarea>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <textarea name="" id="burgerInput" cols="30" rows="5"></textarea>
+                    <button id="create" type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
@@ -18,10 +18,13 @@
     <div class="container">
         <div class="row burger-row">
             <div id="burgers" class="col-md-6 burger-cont p-4">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates esse, mollitia, ratione eveniet minima consectetur aliquam tenetur, temporibus recusandae culpa quaerat maxime. Atque velit iure rerum. Hic minus voluptate at.
+                {{#each burgers}}
+                        {{> burger}}
+                {{/each}}
+                {{!-- New Burgers --}}
             </div>
             <div id="burgersEaten" class="col-md-6 burger-cont p-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, reiciendis aperiam numquam laudantium eveniet illum dolorum voluptatibus dicta earum, optio nobis. Ullam eaque doloribus dolorem aliquam repellendus possimus maiores? Enim?
+                {{!-- Eaten Burgers --}}
             </div>
         </div>
     </div>
