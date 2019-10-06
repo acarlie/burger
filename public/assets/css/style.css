@@ -2,6 +2,16 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h4{
+    font-family: "Montserrat", sans-serif;
+}
+
+h4{
+    color: #777;
+    text-align: center;
 }
 
 header{
@@ -16,11 +26,17 @@ main{
     height: 100%;
     flex: 1;
     display: flex;
+    background: #232526;  
+    background: -webkit-linear-gradient(to right, #414345, #232526);  
+    background: linear-gradient(to right, #414345, #232526); 
+    box-shadow: -10px 10px 20px rgba(0,0,0,.25) inset;
+
 }
 
 .container{
     align-self: stretch;
 }
+
 
 .burger-row{
     height: 100%;
@@ -28,30 +44,35 @@ main{
     align-items: stretch;
 }
 
-form#burger{
+.flex-row{
     display: flex;
 }
 
-textarea{
+.flex-content{
     width: 100%;
 }
 
+.flex-btn-right{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
 
 .burger-cont:first-child{
-    border-bottom: 1px solid #F37335;
+    border-bottom: 1px dashed #555;
+}
+
+.burger-card{
+    overflow: hidden;
+    text-transform: capitalize;
+    border-bottom: 3px solid #F37335;
 }
 
 /*Desktop*/
 @media only screen and (min-width: 768px) {
-
-    #burger .btn{
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-    
+   
     .burger-cont:first-child{
         border-bottom: none;
-        border-right: 1px solid #F37335;
+        border-right: 1px dashed #555;
     }
     /* .container{
     } */

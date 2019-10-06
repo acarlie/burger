@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center"><span class="fas fa-hamburger"></span></h1>
-                <h1 class="text-center">Make a Burger</h1>
-                <form id="burger">
-                    <textarea name="" id="burgerInput" cols="30" rows="5"></textarea>
-                    <button id="create" type="submit" class="btn btn-primary">Submit</button>
+                <h1 class="text-center mb-4">Burger App</h1>
+                <form id="burger" class="flex-row">
+                    <textarea name="" id="burgerInput" cols="30" rows="2" class="flex-content p-2" placeholder="Add a burger!"></textarea>
+                    <button id="create" type="submit" class="btn btn-primary flex-btn-right">Order</button>
                 </form>
             </div>
         </div>
@@ -18,12 +18,14 @@
     <div class="container">
         <div class="row burger-row">
             <div id="burgers" class="col-md-6 burger-cont p-4">
+                <h4 class="mb-4">Order Ready!</h4>
                 {{#each burgers}}
                         {{> burger}}
                 {{/each}}
                 {{!-- New Burgers --}}
             </div>
             <div id="burgersEaten" class="col-md-6 burger-cont p-4">
+                <h4 class="mb-4">Eaten</h4>
                 {{!-- Eaten Burgers --}}
             </div>
         </div>
