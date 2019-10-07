@@ -10,6 +10,11 @@ const burger = {
         orm.create('burgers', cols, vals, function(res){
             cb(res);
         });
+    },
+    update: function(vals, condition, cb){
+        orm.update('burgers', vals, condition, function(res){
+            cb(res);
+        })
     }
 
 // return partially filled orm functions.

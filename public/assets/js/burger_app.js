@@ -14,5 +14,16 @@ $(document).ready(function(){
         })
     });
 
+    $(document).on("click", ".btn-eat", function(){
+        event.preventDefault();
+        let id = $(this).data("burger-id");
+        let body = { eaten: true };
+        $.ajax(`api/burgers/${id}`, {
+            type: 'PUT',
+            data: body
+        }).then(function(){
+            location.reload();
+        });
+    })
 
 });

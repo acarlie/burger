@@ -64,7 +64,20 @@ main{
 .burger-card{
     overflow: hidden;
     text-transform: capitalize;
+    transition: background-color .5s;
+    background-color: #e6e6e6;
+}
+
+.burger-card:hover{
+    background-color: #fff;
+}
+
+.burger-card-burger{
     border-bottom: 3px solid #F37335;
+}
+
+.burger-card-eaten{
+    border-bottom: 3px solid #777;
 }
 
 /*Desktop*/

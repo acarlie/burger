@@ -19,8 +19,12 @@ const orm = {
             cb(res);
         })
     },
-    update: function(table, cb){
-
+    update: function(table, vals, condition, cb){
+        let sql = `UPDATE ${table} SET ${vals} WHERE ${condition};`
+        connection.query(sql, vals, function(err, res){
+            if (err) throw err;
+            cb(res);
+        })
     },
     delete: function(table, cb){
 

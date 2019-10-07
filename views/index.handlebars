@@ -20,12 +20,15 @@
             <div id="burgers" class="col-md-6 burger-cont p-4">
                 <h4 class="mb-4">Order Ready!</h4>
                 {{#each burgers}}
-                        {{> burger}}
+                    {{> burger}}
                 {{/each}}
                 {{!-- New Burgers --}}
             </div>
             <div id="burgersEaten" class="col-md-6 burger-cont p-4">
                 <h4 class="mb-4">Eaten</h4>
+                {{#each eaten}}
+                    {{> eaten}}
+                {{/each}}
                 {{!-- Eaten Burgers --}}
             </div>
         </div>
