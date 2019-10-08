@@ -2,14 +2,20 @@ const events = {
     submit: function(){
         event.preventDefault();
         let burger = $('#burgerInput').val().trim();
-        let body = { name: burger };
-        
-        $.ajax("/api/burgers", {
-            type: 'POST',
-            data: body
-        }).then(function(){
-            location.reload();
-        });
+        let regex = /^[a-z][a-z\s]*$/gi;
+
+        if (burger.match(regex)){
+            $('#error').removeClass('visible');
+            let body = { name: burger };
+            $.ajax("/api/burgers", {
+                type: 'POST',
+                data: body
+            }).then(function(){
+                location.reload();
+            });
+        } else {
+            $('#error').addClass('visible');
+        }
     },
     update: function(){
         event.preventDefault();
