@@ -6,6 +6,11 @@ const burger = {
             cb(res);
         });
     },
+    specific: function(condition, cb){
+        orm.specific('burgers', condition, function(res){
+            cb(res);
+        })
+    },
     create: function(cols, vals, cb){
         orm.create('burgers', cols, vals, function(res){
             cb(res);
@@ -15,10 +20,12 @@ const burger = {
         orm.update('burgers', vals, condition, function(res){
             cb(res);
         })
+    },
+    delete: function(condition, cb){
+        orm.delete('burgers', condition, function(res){
+            cb(res);
+        });
     }
-
-// return partially filled orm functions.
-
 };
 
 module.exports = burger;

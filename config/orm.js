@@ -12,6 +12,13 @@ const orm = {
             cb(res);
         });
     },
+    specific: function(table, condition, cb){
+        let sql = `SELECT * FROM ${table} WHERE ${condition};`;
+        connection.query(sql, function(err, res){
+            if (err) throw err;
+            cb(res);
+        });
+    },
     create: function(table, cols, vals, cb){
         let sql = `INSERT INTO ${table} ( ${cols.join(',')} ) VALUES ( ${vals.map(x => '?').join(',')} );`
         connection.query(sql, vals, function(err, res){
@@ -26,8 +33,12 @@ const orm = {
             cb(res);
         })
     },
-    delete: function(table, cb){
-
+    delete: function(table, condition, cb){
+        let sql = `DELETE FROM ${table} WHERE ${condition};`;
+        connection.query(sql, function(err, res){
+            if (err) throw err;
+            cb(res);
+        })
     }
 }
 

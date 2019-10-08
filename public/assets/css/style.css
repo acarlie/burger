@@ -1,8 +1,17 @@
+:root{
+    --color-dark: #222;
+    --color-primary: #F37335;
+    --color-secondary: #FDC830;
+    --color-accent: #437EEB;
+    --color-danger: #F03A3A;
+}
+
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
+    color: var(--color-dark);
 }
 
 h1, h4{
@@ -15,9 +24,9 @@ h4{
 }
 
 header{
-    background: #FDC830; 
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830); 
-    background: linear-gradient(to right, #F37335, #FDC830);
+    background: var(--color-primary); 
+    background: -webkit-linear-gradient(to right, var(--color-primary), var(--color-secondary)); 
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     color: #fff;
     flex: 0;
 }
@@ -30,7 +39,6 @@ main{
     background: -webkit-linear-gradient(to right, #414345, #232526);  
     background: linear-gradient(to right, #414345, #232526); 
     box-shadow: -10px 10px 20px rgba(0,0,0,.25) inset;
-
 }
 
 .container{
@@ -61,24 +69,60 @@ main{
     border-bottom: 1px dashed #555;
 }
 
+.burger-card-text{
+    box-shadow: 5px 0px 10px rgba(0,0,0,.125);
+}
+
 .burger-card{
     overflow: hidden;
     text-transform: capitalize;
     transition: background-color .5s;
     background-color: #e6e6e6;
+    color: #414345;
 }
 
 .burger-card:hover{
     background-color: #fff;
+    color: var(--color-dark);
 }
 
 .burger-card-burger{
-    border-bottom: 3px solid #F37335;
+    border-left: 3px solid var(--color-accent);
 }
 
 .burger-card-eaten{
-    border-bottom: 3px solid #777;
+    border-left: 3px solid var(--color-danger);
 }
+
+.btn-link{
+    color: #ddd;
+    transition: all .5s;
+}
+
+.btn-link:hover, .btn-link:active{
+    color: #fff;
+    text-decoration: none;
+}
+.btn-primary{
+    background-color: #437EEB;
+}
+
+.btn-main{
+    background-color: #3868C2;
+}
+
+.btn-main:hover{
+    background-color: var(--color-accent);
+}
+
+.btn-delete{
+    background-color: #D43333;
+}
+
+.btn-delete:hover{
+    background-color: var(--color-danger);
+}
+
 
 /*Desktop*/
 @media only screen and (min-width: 768px) {
