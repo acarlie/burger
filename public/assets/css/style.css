@@ -64,6 +64,13 @@ textarea:focus{
     outline: 4px solid rgb(255, 82, 14);
 }
 
+.btn-primary:focus, .btn-primary:active{
+    outline: none !important;
+    box-shadow: none;
+    border: 2px solid rgb(255, 82, 14);
+    box-sizing: content-box;
+}
+
 #burger{
     box-shadow: var(--shadow);
     overflow: hidden;

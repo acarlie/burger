@@ -6,7 +6,8 @@
                 <h1 class="text-center"><span class="fas fa-hamburger"></span></h1>
                 <h1 class="text-center mb-4">Burger App</h1>
                 <form id="burger" class="flex-row rounded mb-3">
-                    <textarea name="" id="burgerInput" cols="30" rows="2" class="flex-content p-2" placeholder="Add a burger!"></textarea>
+                    <label for="burgerInput" class="sr-only">Add a Burger!</label>
+                    <textarea name="burgerInput" id="burgerInput" cols="30" rows="2" class="flex-content p-2" placeholder="Add a burger!"></textarea>
                     <button id="create" type="submit" class="btn btn-primary flex-btn-right">Order</button>
                 </form>
                 <small id="error" class="error rounded p-2"><span class="fas fa-exclamation-circle mr-2"></span>Please only input letters and spaces.</small>
