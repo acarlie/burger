@@ -1,9 +1,10 @@
 :root{
     --color-dark: #222;
-    --color-primary: #F37335;
-    --color-secondary: #FDC830;
-    --color-accent: #437EEB;
-    --color-danger: #F03A3A;
+    --color-primary: #EC0432;
+    --color-secondary:#3F5EFB;
+    --color-accent: #2B6DE9;
+    --color-danger: #E81111;
+    --shadow: 2px 2px 5px rgba(29, 52, 165, 0.5);
 }
 
 body{
@@ -14,15 +15,21 @@ body{
     color: var(--color-dark);
 }
 
+/*---------Typography---------*/
 h1, h4{
     font-family: "Montserrat", sans-serif;
 }
 
+h1{
+    text-shadow: var(--shadow);
+}
+
 h4{
-    color: #888;
+    color: #aaa;
     text-align: center;
 }
 
+/*---------Area Specific---------*/
 header{
     background: var(--color-primary); 
     background: -webkit-linear-gradient(to right, var(--color-primary), var(--color-secondary)); 
@@ -52,6 +59,17 @@ main{
     align-items: stretch;
 }
 
+/*---------Form---------*/
+textarea:focus{
+    outline: 4px solid rgb(255, 82, 14);
+}
+
+#burger{
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/*---------Container Left, Button Right---------*/
 .flex-row{
     display: flex;
 }
@@ -65,14 +83,13 @@ main{
     border-bottom-left-radius: 0;
 }
 
+/*---------Dashed Divider---------*/
 .burger-cont:first-child{
-    border-bottom: 1px dashed #555;
+    border-bottom: 1px dashed #666;
 }
 
-.burger-card-text{
-    box-shadow: 5px 0px 10px rgba(0,0,0,.125);
-}
 
+/*---------Burger Cards---------*/
 .burger-card{
     overflow: hidden;
     text-transform: capitalize;
@@ -94,9 +111,16 @@ main{
     border-left: 3px solid var(--color-danger);
 }
 
+.burger-card-text{
+    box-shadow: 5px 0px 10px rgba(0,0,0,.125);
+}
+
+/*---------Buttons---------*/
 .btn-link{
     color: #ddd;
     transition: all .5s;
+    font-weight: 600;
+    letter-spacing: .5px;
 }
 
 .btn-link:hover, .btn-link:active{
@@ -106,6 +130,13 @@ main{
 
 .btn-primary{
     background-color: #437EEB;
+    font-weight: 600;
+    letter-spacing: .5px;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #3868C2;
 }
 
 .btn-main{
@@ -124,6 +155,7 @@ main{
     background-color: var(--color-danger);
 }
 
+/*---------Error Message---------*/
 .error {
     display:none;
     opacity: 0;
@@ -137,13 +169,13 @@ main{
     display: block;
 }
 
-/*Desktop*/
+/*--------Desktop & Tablet--------*/
 @media only screen and (min-width: 768px) {
    
+    /*---------Dashed Divider---------*/
     .burger-cont:first-child{
         border-bottom: none;
-        border-right: 1px dashed #555;
+        border-right: 1px dashed #666;
     }
-    /* .container{
-    } */
+
 }

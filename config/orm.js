@@ -1,9 +1,5 @@
 const connection = require("../config/connection.js");
 
-const utils = {
-
-}
-
 const orm = {
     all: function(table, cb){
         let sql = `SELECT * FROM ${table};`;

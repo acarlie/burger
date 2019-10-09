@@ -3,7 +3,7 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 
-//burger routes
+//homepage
 router.get("/", function(req, res) {
     burger.all(function(data){
         let burgers = data.filter((x) => x.eaten === 0);
@@ -17,12 +17,14 @@ router.get("/", function(req, res) {
     
 });
 
+//all burgers api
 router.get("/api/burgers", function(req, res) {
     burger.all(function(data){
         res.json(data);
     });
 });
 
+//specific burger api
 router.get("/api/burgers/:id", function(req, res) {
     let id = req.params.id;
     burger.specific(`id = ${id}`, function(data){
@@ -30,12 +32,14 @@ router.get("/api/burgers/:id", function(req, res) {
     });
 });
 
+//create burger
 router.post("/api/burgers", function(req, res){
     burger.create( ["name"], [req.body.name], function (result) {
         res.json(result);
     })
 });
 
+//edit burger
 router.put("/api/burgers/:id", function(req, res){
     let id = req.params.id;
     burger.update( `eaten = ${req.body.eaten}` , `id = ${id}`, function (result) {
@@ -47,6 +51,7 @@ router.put("/api/burgers/:id", function(req, res){
     })
 });
 
+//delete burger
 router.delete("/api/burgers/:id", function(req, res){
     let id = req.params.id;
     burger.delete(`id = ${id}`, function(result){
