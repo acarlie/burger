@@ -7,6 +7,7 @@ const events = {
         if (burger.match(regex)){
             $('#error').removeClass('visible');
             let body = { name: burger };
+            
             $.ajax("/api/burgers", {
                 type: 'POST',
                 data: body
